@@ -30,6 +30,24 @@ class TextBox extends Component {
   }
 }
 
+//create a component that creates 2 rows of the TextBox component
+class TextBoxRow extends Component {
+  render() {
+    return (
+      <Row>
+        <Col xs={6}>
+          <TextBox />
+        </Col>
+        <Col xs={6}>
+          <TextBox />
+        </Col>
+      </Row>
+    )
+  }
+}
+
+
+
 class App extends Component 
 {
   render() 
@@ -41,48 +59,7 @@ class App extends Component
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Grid>
-          <Row>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-                      </Row>
-          <Row>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-            <Col xs={6} md={5}>
-              <TextBox />
-            </Col>
-          </Row>
-        </Grid>
+          <TextBoxRow />
         </header>
       </div>
     )
