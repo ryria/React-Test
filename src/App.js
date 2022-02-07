@@ -37,6 +37,7 @@ class TextBoxRow extends Component {
       <Row>
         <Col xs={6}>
           <TextBox />
+          <TextBox />
         </Col>
         <Col xs={6}>
           <TextBox />
