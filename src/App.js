@@ -28,11 +28,14 @@ class TextBox extends Component {
 }
 
 //create 6x6 grid of TextBox components called Squares
-class Squares extends Component {
+class Squares extends Component 
+{
   render() {
     const squares = []
-    for (let i = 0; i < 6; i++) {
-      for (let j = 0; j < 6; j++) {
+    for (let i = 0; i < 6; i++) 
+    {
+      for (let j = 0; j < 6; j++) 
+      {
         squares.push(<TextBox />)
       }
     }
@@ -41,8 +44,10 @@ class Squares extends Component {
 }
 
 
-class App extends Component {
-  render() {
+class App extends Component 
+{
+  render() 
+  {
     return (
       <div className="App">
         <header className="App-header">
