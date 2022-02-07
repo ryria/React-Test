@@ -27,22 +27,18 @@ class TextBox extends Component {
   }
 }
 
-//create 6x6 grid of TextBox components
-class Grid extends Component {
+//create 6x6 grid of TextBox components called Squares
+class Squares extends Component {
   render() {
-    let rows = []
+    const squares = []
     for (let i = 0; i < 6; i++) {
-      let cols = []
       for (let j = 0; j < 6; j++) {
-        cols.push(<TextBox />)
+        squares.push(<TextBox />)
       }
-      rows.push(<div className="row">{cols}</div>)
     }
-    return <div className="grid">{rows}</div>
+    return <div>{squares}</div>
   }
 }
-
-
 
 
 
@@ -84,8 +80,7 @@ class App extends Component {
           <p>
             Edit <code>src/App.js</code> and save to reload.
           </p>
-          <Grid />
-          <LambdaDemo />
+          <Squares />
         </header>
       </div>
     )
