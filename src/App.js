@@ -1,6 +1,9 @@
 import React, { Component } from "react"
 import logo from "./logo.svg"
 import "./App.css"
+import { Grid, Row, Col } from "react-grid-system"
+
+//import react-grid-system and make a 6x5 table of TextBox components
 
 
 //create textbox component that when clicked cycles color between Grey > Green > Yello
@@ -27,40 +30,57 @@ class TextBox extends Component {
   }
 }
 
-//create 5 column wide and 6 row high grid of textboxes
-class Grid extends Component {
+//create a 5x5 table of TextBox components
+class App extends Component {
   render() {
-    const rows = []
-    for (let i = 0; i < 6; i++) {
-      const columns = []
-      for (let j = 0; j < 5; j++) {
-        columns.push(<TextBox key={j} />)
-      }
-      rows.push(<div key={i}>{columns}</div>)
-    }
-    return <div>{rows}</div>
-  }
-}
-
-
-
-
-class App extends Component 
-{
-  render() 
-  {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <Grid />
-        </header>
+        <Grid>
+          <Row>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+                      </Row>
+          <Row>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+          </Row>
+          <Row>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+            <Col xs={6} md={5}>
+              <TextBox />
+            </Col>
+          </Row>
+        </Grid>
       </div>
     )
   }
 }
+
 
 export default App
