@@ -27,21 +27,21 @@ class TextBox extends Component {
   }
 }
 
-//create 6x6 grid of TextBox components called Squares
-class Squares extends Component 
-{
+//create 6x6 table of TextBox components called Squares
+class Squares extends Component {
   render() {
-    const squares = []
-    for (let i = 0; i < 6; i++) 
-    {
-      for (let j = 0; j < 6; j++) 
-      {
-        squares.push(<TextBox />)
+    let rows = []
+    for (let i = 0; i < 6; i++) {
+      let cols = []
+      for (let j = 0; j < 6; j++) {
+        cols.push(<TextBox key={j} />)
       }
+      rows.push(<div key={i}>{cols}</div>)
     }
-    return <div>{squares}</div>
+    return <div className="squares">{rows}</div>
   }
 }
+
 
 
 class App extends Component 
