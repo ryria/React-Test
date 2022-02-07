@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import logo from "./logo.svg"
 import "./App.css"
 import { Grid, Row, Col } from "react-grid-system"
 
@@ -29,12 +30,18 @@ class TextBox extends Component {
   }
 }
 
-//create a 5x5 table of TextBox components
-class App extends Component {
-  render() {
+class App extends Component 
+{
+  render() 
+  {
     return (
       <div className="App">
-        <Grid>
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <Grid>
           <Row>
             <Col xs={6} md={5}>
               <TextBox />
@@ -76,10 +83,10 @@ class App extends Component {
             </Col>
           </Row>
         </Grid>
+        </header>
       </div>
     )
   }
 }
-
 
 export default App
