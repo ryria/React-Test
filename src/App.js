@@ -72,18 +72,19 @@ class TextInput extends Component {
 
   render() {
     return (
-      <div style={{
-        backgroundColor: this.state.color,
-        width: "100px",
-        height: "100px",
-        margin: "5px",
-        border: "1px solid black"
-      }}>
+      <div >
         <input
           type="text"
           value={this.state.text}
           maxLength="1"
           onChange={this.handleChange}
+          style={{
+            backgroundColor: this.state.color,
+            width: "100px",
+            height: "100px",
+            margin: "5px",
+            border: "1px solid black"
+          }}
         />
       </div>
     )
