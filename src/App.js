@@ -54,17 +54,53 @@ class TextBox extends Component {
   }
 }
 
+//create a text input component with a one character limit
+
+class TextInput extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      text: ""
+    }
+  }
+
+  handleChange = event => {
+    this.setState({
+      text: event.target.value
+    })
+  }
+
+  render() {
+    return (
+      <div style={{
+        backgroundColor: this.state.color,
+        width: "100px",
+        height: "100px",
+        margin: "5px",
+        border: "1px solid black"
+      }}>
+        <input
+          type="text"
+          value={this.state.text}
+          maxLength="1"
+          onChange={this.handleChange}
+        />
+      </div>
+    )
+  }
+}
+
 
 //create a component that creates 2 rows of the TextBox component
 class TextBoxRow extends Component {
   render() {
     return (
       <Row>
-        <Col xs={3}>
-          <TextBox />
+        <Col xs={4}>
+          <TextInput />
           <TextBox />
         </Col>
-        <Col xs={6}>
+        <Col xs={4}>
           <TextBox />
         </Col>
       </Row>
