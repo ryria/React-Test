@@ -6,36 +6,61 @@ import { Row, Col } from "react-grid-system"
 //import react-grid-system and make a 6x5 table of TextBox components
 
 
-//create textbox component that when clicked cycles color between Grey > Green > Yello
+//create textbox input component that when clicked cycles color between Grey > Green > Yellow > Red > Grey
+
 class TextBox extends Component {
-  state = {
-    color: "grey"
+  constructor(props) {
+    super(props)
+    this.state = {
+      color: "grey"
+    }
   }
-  changeColor = () => {
-    this.setState({
-      color: "green"
-    })
+
+  handleClick = () => {
+    if (this.state.color === "grey") {
+      this.setState({
+        color: "green"
+      })
+    } else if (this.state.color === "green") {
+      this.setState({
+        color: "yellow"
+      })
+    } else if (this.state.color === "yellow") {
+      this.setState({
+        color: "red"
+      })
+    } else {
+      this.setState({
+        color: "grey"
+      })
+    }
   }
+
   render() {
     return (
       <div
         style={{
+          backgroundColor: this.state.color,
           width: "100px",
           height: "100px",
-          backgroundColor: this.state.color
+          margin: "5px",
+          border: "1px solid black"
         }}
-        onClick={this.changeColor}
-      />
+        onClick={this.handleClick}
+      >
+        {this.props.children}
+      </div>
     )
   }
 }
+
 
 //create a component that creates 2 rows of the TextBox component
 class TextBoxRow extends Component {
   render() {
     return (
       <Row>
-        <Col xs={6}>
+        <Col xs={3}>
           <TextBox />
           <TextBox />
         </Col>
