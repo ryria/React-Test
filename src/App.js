@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import logo from "./logo.svg"
 import "./App.css"
-import { Grid, Row, Col } from "react-grid-system"
+import { Row, Col } from "react-grid-system"
 
 //import react-grid-system and make a 6x5 table of TextBox components
 
